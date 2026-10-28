@@ -56,7 +56,7 @@ Canonical reference hashes and 106 documentation checks passed. They establish r
 
 ## Retained implementation and references
 
-[Bundle Authoring](docs/BUNDLE_AUTHORING.md), [Registry](docs/REGISTRY.md), [native platform guide](docs/NATIVE-README.md), [migration](docs/MIGRATION.md) and [validation](docs/VALIDATION.md) retain the substantial Torque references. Canonical reference hashes are checked with `python3 scripts/sync_skill.py --check`. The framework, services and package identities remain independently owned. Native source-URL availability must be checked before attempting the historical setup instructions.
+[Bundle Authoring](docs/BUNDLE_AUTHORING.md), [Registry](REGISTRY.md), [native platform guide](docs/NATIVE-README.md), [migration](docs/MIGRATION.md) and [validation](docs/VALIDATION.md) retain the substantial Torque references. Canonical reference hashes are checked with `python3 scripts/sync_skill.py --check`. The framework, services and package identities remain independently owned. Native source-URL availability must be checked before attempting the historical setup instructions.
 
 ## Build the site
 
