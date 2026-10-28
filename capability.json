@@ -108,5 +108,5 @@
     "docs/evaluations/2026-10-28/consolidation.json"
   ],
   "evidence_summary": "Source history and native evaluation assets are retained. New local package, mirror-drift, and native regression checks are documented separately from prior release evidence. No new paid generation, framework deployment, or outside-user effectiveness is claimed.",
-  "publication_status": "Local release candidate. Native upstream repositories and package ownership remain unchanged."
+  "publication_status": "Installation and evidence scopes are documented below."
 }
