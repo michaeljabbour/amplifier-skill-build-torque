@@ -1,0 +1,112 @@
+{
+  "id": "build-with-torque",
+  "display_name": "Build with Torque",
+  "kind": "skill",
+  "promise": "Build a domain that still fits the rest of the application.",
+  "audience": "Developers composing domain bundles into a Torque application.",
+  "trigger": "Use when designing a Torque domain, authoring a bundle manifest and logic, wiring events/interfaces, or validating integration and schema changes.",
+  "skill_path": "skills/build-with-torque",
+  "modes": [
+    {
+      "name": "Place",
+      "when": "A domain boundary or dependency is unclear.",
+      "output": "A bundle responsibility map with declared interfaces, events, and optional dependencies."
+    },
+    {
+      "name": "Author",
+      "when": "The domain contract and host are known.",
+      "output": "A manifest/logic/UI slice that fits the scoped data and coordinator contracts."
+    },
+    {
+      "name": "Integrate",
+      "when": "A bundle must join a running app or evolve its data.",
+      "output": "A mount plan, integration checks, migration/rollback evidence, and explicit unknowns."
+    }
+  ],
+  "examples": [
+    {
+      "title": "A task bundle without a cross-domain table join",
+      "brief": "A fictional maintenance app needs task cards that react to asset changes.",
+      "before": "Import the asset bundle directly and query its tables from the task domain.",
+      "after": "Keep task storage scoped; declare the asset dependency and public query contract, subscribe to a past-tense asset event, and test missing optional dependencies.",
+      "why": "The useful boundary is the declared behavior and contract; a shared process does not justify shared private state.",
+      "fictional": true
+    }
+  ],
+  "boundaries": [
+    "Installing the authoring method installs no Torque runtime or npm package.",
+    "Torque framework modules keep their own code ownership, package identities, and lifecycle; they are not all being renamed or retired.",
+    "Registry versions and historical examples are source snapshots. Inspect the installed package contracts before applying them."
+  ],
+  "install_commands": [
+    "python3 scripts/capability.py doctor",
+    "python3 scripts/capability.py install --dest ~/.agents/skills"
+  ],
+  "runtime_install_commands": [
+    "torque --help",
+    "torque validate",
+    "torque doctor"
+  ],
+  "verification": [
+    {
+      "name": "Canonical reference mirror gate",
+      "command": "python3 scripts/sync_skill.py --check",
+      "status": "passed",
+      "evidence": "AI setup, Bundle Authoring, and Registry mirrors match canonical sources plus their recorded source/output hashes.",
+      "expected": "The declared check scope passes without a broader benefit claim."
+    },
+    {
+      "name": "Retained documentation checks",
+      "command": "node --test test/docs.test.js; python -m pytest test/test_phase3_docs.py test/test_phase4_docs.py -q",
+      "status": "passed",
+      "evidence": "47 Node tests and 59 Python tests pass. These verify documentation coverage only; no Torque framework/runtime or app deployment result is claimed.",
+      "expected": "The declared check scope passes without a broader benefit claim."
+    },
+    {
+      "name": "Portable build and clean install",
+      "command": "python3 scripts/capability.py build/check/doctor; install --dest <temporary-parent> twice",
+      "status": "passed",
+      "evidence": "Canonical ZIP bytes, local links, complete method/license, clean install and idempotent reinstall pass. No runtime starts.",
+      "expected": "Conformance only."
+    }
+  ],
+  "sources": [
+    {
+      "repo": "torque",
+      "commit": "5c2cadfdb698170374fa3c6c78291ac1842a99e6",
+      "paths": [
+        "docs/AI_SETUP_PROMPT.md",
+        "docs/BUNDLE_AUTHORING.md",
+        "REGISTRY.md"
+      ],
+      "license": "MIT License",
+      "role": "Primary source history/native execution retained; generated rich references from canonical docs."
+    }
+  ],
+  "consolidation": [
+    {
+      "source": "docs/AI_SETUP_PROMPT.md",
+      "destination": "skills/build-with-torque/references/AI_SETUP_PROMPT.md",
+      "action": "Generated mirror with source/output SHA-256 drift gate; edit canonical source only."
+    },
+    {
+      "source": "docs/BUNDLE_AUTHORING.md",
+      "destination": "skills/build-with-torque/references/BUNDLE_AUTHORING.md",
+      "action": "Generated mirror with source/output SHA-256 drift gate; edit canonical source only."
+    },
+    {
+      "source": "REGISTRY.md",
+      "destination": "skills/build-with-torque/references/REGISTRY.md",
+      "action": "Generated mirror with source/output SHA-256 drift gate; edit canonical source only."
+    }
+  ],
+  "docs": [
+    "docs/INSTALL.md",
+    "docs/MIGRATION.md",
+    "docs/VALIDATION.md",
+    "docs/NATIVE-README.md",
+    "docs/evaluations/2026-10-28/consolidation.json"
+  ],
+  "evidence_summary": "Source history and native evaluation assets are retained. New local package, mirror-drift, and native regression checks are documented separately from prior release evidence. No new paid generation, framework deployment, or outside-user effectiveness is claimed.",
+  "publication_status": "Local release candidate. Native upstream repositories and package ownership remain unchanged."
+}

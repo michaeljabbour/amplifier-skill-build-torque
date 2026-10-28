@@ -1,3 +1,18 @@
+# Build with Torque
+
+Build a domain that still fits the rest of the application.
+
+The independently installable authoring method lives in `skills/build-with-torque/`. It starts no platform or service.
+
+```sh
+python3 scripts/capability.py doctor
+python3 scripts/capability.py install --dest ~/.agents/skills
+```
+
+Use [installation](docs/INSTALL.md), [ownership/migration](docs/MIGRATION.md), and [actual validation](docs/VALIDATION.md). Generated portable references mirror canonical docs with `python3 scripts/sync_skill.py --check`. Framework modules keep their native package ownership and identities.
+
+## Retained platform guide
+
 # Torque
 
 A composable monolith framework for Node.js. Build full-stack applications by composing independent **bundles** -- each with its own schema, API, events, and UI -- into a single deployable process.

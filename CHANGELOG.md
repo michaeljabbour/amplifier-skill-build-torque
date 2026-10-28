@@ -1,0 +1,9 @@
+# Changelog
+
+## 2026-10-28 — local portable consolidation
+
+Added the Build with Torque canonical entry, generated rich reference mirrors with a hash gate, independent method install, family site metadata, and explicit native ownership/evidence boundaries. Native history and assets remain. No remote publication or paid work.
+
+
+
+Actual local checks and their limits are recorded in `docs/VALIDATION.md` and `docs/evaluations/2026-10-28/consolidation.json`. No effectiveness or new deployment is inferred.
