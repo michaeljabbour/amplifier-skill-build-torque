@@ -107,6 +107,58 @@
     "docs/NATIVE-README.md",
     "docs/evaluations/2026-10-28/consolidation.json"
   ],
-  "evidence_summary": "Source history and native evaluation assets are retained. New local package, mirror-drift, and native regression checks are documented separately from prior release evidence. No new paid generation, framework deployment, or outside-user effectiveness is claimed.",
-  "publication_status": "Installation and evidence scopes are documented below."
+  "evidence_summary": "Canonical reference hashes and 106 documentation checks passed. They establish reference coverage, not a deployed framework. Native package availability and app behavior need checking against your installed Torque environment.",
+  "publication_status": "Installation and evidence scopes are documented below.",
+  "marketing": {
+    "headline": "Add a domain without tangling the application.",
+    "lead": "An authoring skill for Torque developers. Give a bundle a clear responsibility, connect it through declared interfaces and events, and plan data changes before they reach an existing store.",
+    "benefits": [
+      {
+        "title": "Keep domains independent",
+        "body": "Own tables inside a bundle and call other domains through declared coordinator interfaces."
+      },
+      {
+        "title": "Make integration inspectable",
+        "body": "Align manifest queries, routes, handlers, events and UI exports with the installed host contracts."
+      },
+      {
+        "title": "Treat data changes deliberately",
+        "body": "Include migration, restart and rollback in the slice instead of assuming hot reload proves readiness."
+      }
+    ],
+    "walkthrough": [
+      {
+        "title": "Place the responsibility",
+        "detail": "Inspect the current mount plan and neighboring bundles; decide whether configuration or a new domain is needed."
+      },
+      {
+        "title": "Author the contract",
+        "detail": "Declare data ownership, named inputs, dependencies, events and degraded behavior."
+      },
+      {
+        "title": "Integrate on an isolated copy",
+        "detail": "Exercise success, invalid input, authorization, missing dependencies, persistence and recovery."
+      }
+    ],
+    "use_when": [
+      "A new domain must join an existing Torque app.",
+      "Two bundles are reaching into each other’s private tables.",
+      "A manifest or schema change needs a migration and rollback plan."
+    ],
+    "not_for": [
+      "The Torque framework, its services or a replacement data layer.",
+      "A promise that historical package versions or private Git URLs are publicly available."
+    ],
+    "quickstart_prompt": "Use Build with Torque to design a maintenance-task bundle. It should react to asset changes without reading another bundle’s private tables. Inspect this host first, then propose its manifest, public interfaces, events and migration checks.",
+    "output_preview": "Fictional bundle: maintenance tasks\nOwns: task records and task state\nDepends on: declared asset query interface\nConsumes: asset.updated with declared payload\nOptional dependency absent: task history still readable\nAcceptance: event replay is idempotent; migration can roll back",
+    "proof_summary": "Canonical reference hashes and 106 documentation checks passed. They establish reference coverage, not a deployed framework. Native package availability and app behavior need checking against your installed Torque environment.",
+    "next_step": "Bring the host mount plan and one domain you want to add.",
+    "example_note": "Fictional worked example. It illustrates the intended output; it is not a measured result or a real customer story.",
+    "install_notes": [
+      "Requires Git and Python 3.11+ for the repository installer. The portable method itself can be read by a compatible agent without a service or provider account.",
+      "The destination is a skills-parent folder. Use the discovery path supported by your agent; ~/.agents/skills is an example, not a universal host setting.",
+      "Keep the complete installed folder, references and license together. Identical reinstall is safe; conflicts are refused. A deliberate --replace keeps a dated backup."
+    ]
+  },
+  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-build-torque"
 }

@@ -1,17 +1,76 @@
 # Build with Torque
 
-Build a domain that still fits the rest of the application.
+Add a domain without tangling the application.
 
-The independently installable authoring method lives in `skills/build-with-torque/`. It starts no platform or service.
+An authoring skill for Torque developers. Give a bundle a clear responsibility, connect it through declared interfaces and events, and plan data changes before they reach an existing store.
+
+[Explore the site](https://michaeljabbour.github.io/amplifier-skill-build-torque/) · [Read the method](skills/build-with-torque/SKILL.md) · [Install guide](docs/INSTALL.md)
+
+## What you get
+
+- **Keep domains independent.** Own tables inside a bundle and call other domains through declared coordinator interfaces.
+- **Make integration inspectable.** Align manifest queries, routes, handlers, events and UI exports with the installed host contracts.
+- **Treat data changes deliberately.** Include migration, restart and rollback in the slice instead of assuming hot reload proves readiness.
+
+## Install and try it
+
+Requires Git and Python 3.11+. Run these commands from a terminal:
 
 ```sh
+git clone https://github.com/michaeljabbour/amplifier-skill-build-torque.git
+cd amplifier-skill-build-torque
 python3 scripts/capability.py doctor
 python3 scripts/capability.py install --dest ~/.agents/skills
 ```
 
-Use [installation](docs/INSTALL.md), [ownership/migration](docs/MIGRATION.md), and [actual validation](docs/VALIDATION.md). Generated portable references mirror canonical docs with `python3 scripts/sync_skill.py --check`. Framework modules keep their native package ownership and identities.
+The installer copies `skills/build-with-torque` as a complete folder into your chosen skills parent. Use the discovery path supported by your agent. It starts no service and configures no provider. Restart or refresh skill discovery in your host, then ask:
 
-## Retained platform guide
+```text
+Use Build with Torque to design a maintenance-task bundle. It should react to asset changes without reading another bundle’s private tables. Inspect this host first, then propose its manifest, public interfaces, events and migration checks.
+```
+
+If your agent does not discover installed skills, point it directly at the complete folder and ask it to read `SKILL.md`. Reading the method needs no Python runtime. [Installation details](docs/INSTALL.md) cover conflict handling and optional native execution.
+
+## How the work proceeds
+
+1. **Place the responsibility.** Inspect the current mount plan and neighboring bundles; decide whether configuration or a new domain is needed.
+2. **Author the contract.** Declare data ownership, named inputs, dependencies, events and degraded behavior.
+3. **Integrate on an isolated copy.** Exercise success, invalid input, authorization, missing dependencies, persistence and recovery.
+
+## Example output
+
+Fictional worked example. It illustrates the intended output; it is not a measured result or a real customer story.
+
+```text
+Fictional bundle: maintenance tasks
+Owns: task records and task state
+Depends on: declared asset query interface
+Consumes: asset.updated with declared payload
+Optional dependency absent: task history still readable
+Acceptance: event replay is idempotent; migration can roll back
+```
+
+## What is checked
+
+Canonical reference hashes and 106 documentation checks passed. They establish reference coverage, not a deployed framework. Native package availability and app behavior need checking against your installed Torque environment. See [validation](docs/VALIDATION.md) for the exact checks and limits.
+
+## Retained implementation and references
+
+[Bundle Authoring](docs/BUNDLE_AUTHORING.md), [Registry](docs/REGISTRY.md), [native platform guide](docs/NATIVE-README.md), [migration](docs/MIGRATION.md) and [validation](docs/VALIDATION.md) retain the substantial Torque references. Canonical reference hashes are checked with `python3 scripts/sync_skill.py --check`. The framework, services and package identities remain independently owned. Native source-URL availability must be checked before attempting the historical setup instructions.
+
+## Build the site
+
+```sh
+python3 scripts/capability.py build
+python3 scripts/capability.py check
+```
+
+The static site includes a ZIP built from the canonical method, references and license. Runtime and provider setup remain separate from installing the portable method.
+
+<details>
+<summary>Retained platform guide (source snapshot)</summary>
+
+These historical native platform instructions are preserved for reference and documentation checks. They are separate from the independently installable authoring skill above. Verify current package and source availability before following them.
 
 # Torque
 
@@ -308,3 +367,5 @@ bash ~/torque-dev/torque/install-dev.sh ~/torque-dev
 ## License
 
 MIT — see [LICENSE](./LICENSE)
+
+</details>
