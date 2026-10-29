@@ -160,5 +160,12 @@
       "Keep the complete installed folder, references and license together. Identical reinstall is safe; conflicts are refused. A deliberate --replace keeps a dated backup."
     ]
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-build-torque"
+  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-build-torque",
+  "film": {
+    "file": "build-torque-film",
+    "seconds": 70,
+    "heading": "Own your tables. Declare the rest.",
+    "blurb": "In 70 seconds, Pockets the raccoon night porter borrows a master key to fetch another floor’s news, and the tasks floor goes dark when the assets floor renames a column. Build with Torque keeps each domain on its own keycard floor: you ask a neighbour through the coordinator on a declared line, react to past-tense events, plan what still works when a neighbour is gone, and try data changes on a mock-up floor with a way back. Captions are on the player; a transcript is below.",
+    "note": "The hotel and its building-maintenance app are a fictional example. The film shows how the skill behaves; it does not report results."
+  }
 }
