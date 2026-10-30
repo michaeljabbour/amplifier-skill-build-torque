@@ -142,14 +142,14 @@
     ],
     "use_when": [
       "A new domain must join an existing Torque app.",
-      "Two bundles are reaching into each other’s private tables.",
+      "Two bundles are reaching into each other\u2019s private tables.",
       "A manifest or schema change needs a migration and rollback plan."
     ],
     "not_for": [
       "The Torque framework, its services or a replacement data layer.",
       "A promise that historical package versions or private Git URLs are publicly available."
     ],
-    "quickstart_prompt": "Use Build with Torque to design a maintenance-task bundle. It should react to asset changes without reading another bundle’s private tables. Inspect this host first, then propose its manifest, public interfaces, events and migration checks.",
+    "quickstart_prompt": "Use Build with Torque to design a maintenance-task bundle. It should react to asset changes without reading another bundle\u2019s private tables. Inspect this host first, then propose its manifest, public interfaces, events and migration checks.",
     "output_preview": "Fictional bundle: maintenance tasks\nOwns: task records and task state\nDepends on: declared asset query interface\nConsumes: asset.updated with declared payload\nOptional dependency absent: task history still readable\nAcceptance: event replay is idempotent; migration can roll back",
     "proof_summary": "Canonical reference hashes and 106 documentation checks passed. They establish reference coverage, not a deployed framework. Native package availability and app behavior need checking against your installed Torque environment.",
     "next_step": "Bring the host mount plan and one domain you want to add.",
@@ -160,12 +160,94 @@
       "Keep the complete installed folder, references and license together. Identical reinstall is safe; conflicts are refused. A deliberate --replace keeps a dated backup."
     ]
   },
-  "repository_url": "https://github.com/michaeljabbour/amplifier-skill-build-torque",
+  "repository_url": "https://github.com/michaeljabbour/amplifier-capability-build-with-torque",
+  "name": "amplifier-capability-build-with-torque",
+  "legacy_names": [
+    "amplifier-skill-build-torque",
+    "build-with-torque"
+  ],
+  "contract_version": "amplifier-capability/v1",
+  "version": null,
+  "version_basis": "No release version recorded; installer requires a full Git revision pin.",
+  "engine": "LLM",
+  "engine_components": {
+    "caller_method": "LLM"
+  },
+  "surfaces": [
+    "agent-skills"
+  ],
+  "portable_method": {
+    "name": "build-with-torque",
+    "path": "skills/build-with-torque",
+    "include": [
+      "."
+    ],
+    "contract": "Agent Skills directory; caller applies the method; no independent execution loop is installed."
+  },
+  "interfaces": {
+    "portable": {
+      "input": "Caller task and explicitly authorized context",
+      "output": "Build a domain that still fits the rest of the application.",
+      "failure": "Report insufficient evidence, unsupported context or host limitation; never turn discovery into an execution claim."
+    },
+    "native": {
+      "distribution": null,
+      "entrypoints": {},
+      "docs": [
+        "docs/INSTALL.md",
+        "docs/MIGRATION.md",
+        "docs/VALIDATION.md",
+        "docs/NATIVE-README.md",
+        "docs/evaluations/2026-10-28/consolidation.json"
+      ],
+      "status": "Existing declared entrypoints preserved; runtime signatures, service access and installation tests remain separate evidence."
+    },
+    "host_adapters": {
+      "amplifier_bundle": null,
+      "grants_autonomy": false
+    }
+  },
+  "permissions": {
+    "installation": {
+      "network": false,
+      "executes_capability_code": false,
+      "writes": [
+        "Selected discovery folders",
+        ".capability-state transaction backups"
+      ],
+      "grants_runtime_permissions": false
+    },
+    "runtime": {
+      "status": "Host/caller authorizes each operation; installation is not a tool allowlist or standing approval.",
+      "declared_boundaries": [
+        "Installing the authoring method installs no Torque runtime or npm package.",
+        "Torque framework modules keep their own code ownership, package identities, and lifecycle; they are not all being renamed or retired.",
+        "Registry versions and historical examples are source snapshots. Inspect the installed package contracts before applying them."
+      ]
+    },
+    "secret_names": {
+      "discovery_requires": [],
+      "native_runtime_inventory": "See native documentation; no credentials are bundled or inferred."
+    }
+  },
+  "dataflow": {
+    "installation": "Read pinned tracked portable source and copy locally with SHA-256 receipts. No source text is transmitted.",
+    "method": "Caller supplies authorized context; existing promise and boundaries govern output.",
+    "native_runtime": "Provider/network/storage flows are owned by native interfaces and host authorization; these files do not enable them."
+  },
+  "source_policy": {
+    "revision": "Explicit full40-character Git commit required at installation; never infer latest.",
+    "repository_rename": "Public identity may change; skill folder, imports, entrypoints, tool IDs and schemas remain stable.",
+    "research": ".research/market remains local and ignored; AGENTS governs refresh."
+  },
   "film": {
     "file": "build-torque-film",
     "seconds": 70,
     "heading": "Own your tables. Declare the rest.",
-    "blurb": "In 70 seconds, Pockets the raccoon night porter borrows a master key to fetch another floor’s news, and the tasks floor goes dark when the assets floor renames a column. Build with Torque keeps each domain on its own keycard floor: you ask a neighbour through the coordinator on a declared line, react to past-tense events, plan what still works when a neighbour is gone, and try data changes on a mock-up floor with a way back. Captions are on the player; a transcript is below.",
+    "blurb": "In 70 seconds, Pockets the raccoon night porter borrows a master key to fetch another floor\u2019s news, and the tasks floor goes dark when the assets floor renames a column. Build with Torque keeps each domain on its own keycard floor: you ask a neighbour through the coordinator on a declared line, react to past-tense events, plan what still works when a neighbour is gone, and try data changes on a mock-up floor with a way back. Captions are on the player; a transcript is below.",
     "note": "The hotel and its building-maintenance app are a fictional example. The film shows how the skill behaves; it does not report results."
-  }
+  },
+  "repository_aliases": [
+    "https://github.com/michaeljabbour/amplifier-skill-build-torque"
+  ]
 }
